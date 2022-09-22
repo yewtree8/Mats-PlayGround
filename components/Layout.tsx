@@ -21,7 +21,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <Head>
-        <title>Oregon Humane Adoptable Dogs</title>
+        <title>Mat's Playground & Adoptable dogs</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <AppShell
@@ -39,7 +39,7 @@ export default function Layout({ children }) {
               <Box sx={{ display: "flex" }}>
                 <Home />
                 <Title order={5} ml={10}>
-                  Home
+                  Doggos
                 </Title>
               </Box>
             </Link>
@@ -68,7 +68,7 @@ export default function Layout({ children }) {
               </MediaQuery>
               <DogBowl />
               <Text ml={10} size="md">
-                Oregon Humane Adoptable Dogs
+              Mat's Playground & Adoptable dogs
               </Text>
             </div>
           </Header>
