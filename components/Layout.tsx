@@ -21,7 +21,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <Head>
-        <title>Mat's Playground & Adoptable dogs</title>
+        <title>Mat`s Playground & Adoptable dogs</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <AppShell
@@ -68,7 +68,7 @@ export default function Layout({ children }) {
               </MediaQuery>
               <DogBowl />
               <Text ml={10} size="md">
-              Mat's Playground & Adoptable dogs
+              Mat`s Playground & Adoptable dogs
               </Text>
             </div>
           </Header>
