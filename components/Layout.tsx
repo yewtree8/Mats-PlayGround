@@ -38,7 +38,10 @@ export default function Layout({ children }) {
             <Link href="/" passHref>
               <Box sx={{ display: "flex" }}>
                 <Home />
-                <Title order={5} ml={10}>
+                <Title
+                 order={5}
+                 ml={10}
+                 sx={{"cursor" : "pointer"}}>
                   Doggos
                 </Title>
               </Box>
