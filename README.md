@@ -1,0 +1,3 @@
+## Next.JS, TS, React, GraphQL & Dogs
+
+Will deploy onto vercel... probably...
