@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { dehydrate, useQuery } from "react-query";
 import { Grid, Text, Button, Title, Image } from "@mantine/core";
+import { Box, Modal, Typography } from '@mui/material';
 
 import { queryClient, dogByName } from "../../src/api";
 
@@ -17,6 +18,17 @@ export async function getServerSideProps({ params }) {
   };
 }
 
+const style = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 const DogDetail: React.FunctionComponent<{
   name: string;
@@ -26,6 +38,11 @@ const DogDetail: React.FunctionComponent<{
   if (!data.dog) {
     return <div>No dog found</div>;
   }
+
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false)
 
   const dogYearsAlive = () : number => {
     let ageInWeeks:number = data.dog.ageInWeeks;
@@ -38,6 +55,24 @@ const DogDetail: React.FunctionComponent<{
     let ageInWeeks:number = data.dog.ageInWeeks;
     let humanAgeInYears = Math.floor(ageInWeeks / 52).toFixed(1);
     return humanAgeInYears;
+  }
+
+  const AdoptionModal = () : any => {
+    <>
+    <Button fullWidth>Adopt {data.dog.name}</Button>
+    <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Adopt {data.dog.name} Today!
+          </Typography>
+        </Box>
+      </Modal>
+    </>
   }
 
   return (
@@ -90,9 +125,11 @@ const DogDetail: React.FunctionComponent<{
       </Grid.Col>
 
       <Grid.Col xs={12} md={6} lg={12}>
-        <Button fullWidth>Adopt {data.dog.name}</Button>
+        
+        <AdoptionModal />
       </Grid.Col>
     </Grid>
+
   );
 };
 
