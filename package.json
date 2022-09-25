@@ -19,6 +19,7 @@
     "@mantine/form": "^4.1.1",
     "@mantine/hooks": "^4.1.1",
     "@mantine/next": "^4.1.1",
+    "@mui/icons-material": "^5.10.6",
     "apollo-server-micro": "^3.6.7",
     "class-validator": "^0.13.2",
     "graphql": "^15.3.0",
