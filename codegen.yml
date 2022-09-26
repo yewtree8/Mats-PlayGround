@@ -1,4 +1,4 @@
-schema: https://mats-playground.vercel.app/api/graphql
+schema: http://localhost:3000/api/graphql
 documents: './src/**/*.graphql'
 generates:
   ./src/generated/graphql.ts:

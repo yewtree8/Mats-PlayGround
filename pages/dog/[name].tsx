@@ -30,6 +30,8 @@ const style = {
   p: 4,
 };
 
+
+
 const DogDetail: React.FunctionComponent<{
   name: string;
 }> = ({ name }) => {
@@ -39,10 +41,10 @@ const DogDetail: React.FunctionComponent<{
     return <div>No dog found</div>;
   }
 
-
-  const [open, setOpen] = useState(false);
+const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false)
+  const handleClose = () => setOpen(false);
+  
 
   const dogYearsAlive = () : number => {
     let ageInWeeks:number = data.dog.ageInWeeks;
@@ -59,7 +61,9 @@ const DogDetail: React.FunctionComponent<{
 
   const AdoptionModal = () : any => {
     <>
-    <Button fullWidth>Adopt {data.dog.name}</Button>
+
+    <Button fullWidth
+    onClick={handleOpen}>Adopt {data.dog.name}</Button>
     <Modal
         open={open}
         onClose={handleClose}
